@@ -172,8 +172,14 @@ could_be_smb_url(const char * arg)
 {
 	int result;
 
+	#if !defined(__amigaos4__)
 	result = (arg != NULL && strncasecmp(arg, "smb://", 6) == 0);
+	#endif
 
+	#if defined(__amigaos4__)
+	result = (arg != NULL && astrncasecmp(arg, "smb://", 6) == 0);
+	#endif
+	
 	return(result);
 }
 

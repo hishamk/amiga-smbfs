@@ -86,7 +86,10 @@
    change in the recent OS4 header files. */
 #if defined(__NEW_TIMEVAL_DEFINITION_USED__)
 
+#if !defined(__amigaos4__)
 #define timeval		TimeVal
+#endif
+
 #define tv_secs		Seconds
 #define tv_micro	Microseconds
 

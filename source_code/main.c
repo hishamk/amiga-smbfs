@@ -11381,8 +11381,18 @@ strlcat(char *dst, const char *src, size_t siz)
 /* Wrapper function for case-insensitive string comparison, as used
  * by the SMB url parser.
  */
+#if !defined(__amigaos4__)
 LONG
 strncasecmp(const char *a, const char *b, LONG n)
 {
 	return(Strnicmp((STRPTR)a, (STRPTR)b, n));
 }
+#endif
+
+#if defined(__amigaos4__)
+LONG
+astrncasecmp(const char *a, const char *b, LONG n)
+{
+	return(Strnicmp((STRPTR)a, (STRPTR)b, n));
+}
+#endif

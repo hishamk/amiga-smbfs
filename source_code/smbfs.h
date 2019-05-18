@@ -177,9 +177,13 @@ extern APTR allocate_cleared_memory(LONG count, LONG record_size);
 #define calloc(n, s) allocate_cleared_memory(n, s)
 
 /****************************************************************************/
-
+#if !defined(__amigaos4__)
 extern LONG strncasecmp(const char *a, const char *b, LONG n);
+#endif
 
+#if defined(__amigaos4__)
+extern LONG astrncasecmp(const char *a, const char *b, LONG n);
+#endif
 /****************************************************************************/
 
 #undef memcpy
