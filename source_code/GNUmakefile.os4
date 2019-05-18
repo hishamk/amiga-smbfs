@@ -59,7 +59,7 @@ DEBUG_OPTIONS = -DNDEBUG
 
 ###########################################################################
 
-CFLAGS = -mcrt=clib2 -D__NO_NET_API $(WARNINGS) $(OPTIMIZE) $(DEBUG) \
+CFLAGS = -mcrt=clib2-ts -D__NO_NET_API $(WARNINGS) $(OPTIMIZE) $(DEBUG) \
          $(DEBUG_OPTIONS) -I. $(INCLUDE_CROSS_COMPILE) -Iinclude -Inetinclude
 LFLAGS = -nostartfiles -nostdlib -L.
 
